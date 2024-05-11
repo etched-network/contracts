@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: UNLICENSED
+// SPDX-License-Identifier: MIT
 pragma solidity >=0.8.14;
 
 // sendTx could just accept arbitrary bytes, even without additional param for signature - just encode it however in the bytes

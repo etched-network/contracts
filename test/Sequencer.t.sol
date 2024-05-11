@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: UNLICENSED
+// SPDX-License-Identifier: MIT
 pragma solidity >=0.8.14;
 
 import "forge-std/Test.sol";
@@ -99,11 +99,11 @@ contract SequencerTest is Test {
     }
 
     function test_Sequencer() public {
-        address signer = _sendTx(channelId_Eth0, "rethdev_0", address(0x123));
+        address signer = _sendTx(channelId_Reth0, "alice", address(0x123));
 
-        vm.prank(signer);
+        vm.prank(makeAddr("rethdev_0"));
         // idk, whatever. just set bullshit state root
-        sequencer.roll(channelId_Eth0, bytes32(uint256(0xabcd)));
+        sequencer.roll(channelId_Reth0, bytes32(uint256(0xabcd)));
     }
 
     function test_RollNotSequencer() public {
